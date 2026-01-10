@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CityPulse - Report City Issues</title>
+    <!-- Tailwind CSS CDN for styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Smooth hover animation for feature cards */
+        .hover-lift {
+            transition: all 0.3s ease;
+        }
+        .hover-lift:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-gray-100 to-gray-200">
+
+    <!-- Navigation Bar -->
+    <nav class="bg-gray-100 backdrop-blur-sm fixed w-full top-0 z-50 shadow-sm">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex items-center space-x-3 cursor-pointer" onclick="window.location.href='index.html'">
+                    <div class="w-12 h-12 bg-blue-600 rounded-xl flex items-center justify-center">
+                        <!-- Map Pin Icon -->
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                        </svg>
+                    </div>
+                    <span class="text-2xl font-bold text-gray-800">CityPulse</span>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="text-gray-700 hover:text-blue-600 transition font-medium">Home</a>
+                    <a href="#" class="text-gray-700 hover:text-blue-600 transition font-medium">Features</a>
+                    <a href="login.html" class="px-6 py-2.5 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition font-medium">
+                        Login / Signup
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button onclick="toggleMobileMenu()" class="md:hidden">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu (Hidden by default) -->
+        <div id="mobileMenu" class="hidden md:hidden bg-white border-t">
+            <div class="px-4 py-4 space-y-3">
+                <a href="index.html" class="block px-4 py-2 rounded-lg hover:bg-gray-100 font-medium">Home</a>
+                <a href="#" class="block px-4 py-2 rounded-lg hover:bg-gray-100 font-medium">Features</a>
+                <a href="login.html" class="block px-4 py-2 bg-blue-600 text-white rounded-lg font-medium text-center">
+                    Login / Signup
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="pt-32 pb-20 px-4">
+        <div class="max-w-6xl mx-auto text-center">
+            <!-- Main Heading -->
+            <h1 class="text-5xl md:text-6xl font-bold mb-4 leading-tight text-gray-900">
+                Report City Issues.
+            </h1>
+            <h1 class="text-5xl md:text-6xl font-bold mb-6 leading-tight">
+                <span class="text-blue-600">Track Fixes.</span> 
+                <span class="text-gray-900">Improve Lives.</span>
+            </h1>
+            
+            <!-- Description -->
+            <p class="text-lg md:text-xl text-gray-600 mb-8 max-w-3xl mx-auto leading-relaxed">
+                CityPulse connects citizens with local authorities to fix potholes, streetlights, and garbage issues faster. Join the movement for a better city.
+            </p>
+            
+            <!-- Call to Action Buttons -->
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="login.html" class="px-8 py-4 bg-blue-600 text-white rounded-lg text-lg font-medium hover:bg-blue-700 transition">
+                    Report an Issue Now
+                </a>
+                <a href="login.html" class="text-gray-700 hover:text-blue-600 transition font-medium">
+                    Log in as Admin →
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Features Section -->
+    <div class="max-w-6xl mx-auto px-4 pb-20">
+        <!-- Section Header -->
+        <div class="text-center mb-12">
+            <p class="text-blue-600 font-semibold mb-2">Smart City Tech</p>
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900">
+                Everything you need to improve your city
+            </h2>
+        </div>
+
+        <!-- Feature Cards Grid -->
+        <div class="grid md:grid-cols-2 gap-10">
+            <!-- Feature Card 1: Photo Evidence -->
+            <div class="bg-white rounded-2xl p-8 shadow-sm hover-lift">
+                <div class="w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center mb-6">
+                    <!-- Camera Icon -->
+                    <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"/>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"/>
+                    </svg>
+                </div>
+                <h3 class="text-xl font-bold mb-3 text-gray-900">Photo Evidence</h3>
+                <p class="text-gray-600 leading-relaxed">
+                    Snap a photo of the problem directly from your phone to give authorities clear proof.
+                </p>
+            </div>
+
+           
+
+            <!-- Feature Card 3: Live Updates -->
+            <div class="bg-white rounded-2xl p-8 shadow-sm hover-lift">
+                <div class="w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center mb-6">
+                    <!-- Refresh Icon -->
+                    <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/>
+                    </svg>
+                </div>
+                <h3 class="text-xl font-bold mb-3 text-gray-900">Tracking</h3>
+                <p class="text-gray-600 leading-relaxed">
+                    Track your report status changes from Pending to Resolved.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript for Mobile Menu Toggle -->
+    <script>
+        // Function to toggle mobile menu visibility
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('hidden');
+        }
+    </script>
+
+</body>
+</html>
