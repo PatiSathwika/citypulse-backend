@@ -24,7 +24,7 @@
 <!-- NAVBAR -->
 <nav class="bg-gray-100 fixed w-full top-0 z-50 shadow-sm">
     <div class="max-w-7xl mx-auto px-6 h-20 flex justify-between items-center">
-        <div class="flex items-center space-x-3 cursor-pointer" onclick="window.location.href='index.html'">
+        <div class="flex items-center space-x-3 cursor-pointer" onclick="window.location.href='/'">
             <div class="w-12 h-12 bg-blue-600 rounded-xl flex items-center justify-center">
                 <span class="text-white text-xl">📍</span>
             </div>
@@ -81,7 +81,7 @@ const auth = getAuth(app);
 
 onAuthStateChanged(auth, (user) => {
   if (!user) {
-    window.location.href = "login.html";
+    window.location.href = "/login";
   }
 });
 </script>
@@ -90,7 +90,7 @@ onAuthStateChanged(auth, (user) => {
 <script>
 
 function loadAdminIssues() {
-    fetch("http://127.0.0.1:5000/issues")
+    fetch("/issues")
         .then(res => res.json())
         .then(data => {
             const table = document.getElementById("adminIssuesTable");
@@ -172,7 +172,7 @@ function updateStatus(issueId) {
 
     console.log("SENDING UPDATE:", issueId, status);
 
-    fetch(`http://127.0.0.1:5000/update/${issueId}`, {
+    fetch(`/update/${id}`, {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
@@ -189,7 +189,6 @@ function updateStatus(issueId) {
         alert("❌ Update failed");
     });
 }
-
 function openImageModal(url) {
     document.getElementById("modalImage").src = url;
     document.getElementById("imageModal").classList.remove("hidden");
@@ -199,22 +198,13 @@ function closeImageModal() {
     document.getElementById("modalImage").src = "";
     document.getElementById("imageModal").classList.add("hidden");
 }
-
-
-
-
 loadAdminIssues();               // initial load
 setInterval(loadAdminIssues, 5000); // auto refresh every 5 seconds
-
 </script>
 <script>
-
 function logout() {
-    window.location.href = "login.html";
+    window.location.href = "/login";
 }
-
-
-
 </script>
 
 </body>
