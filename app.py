@@ -71,7 +71,8 @@ def home_page():
     return render_template("index.html")
 @app.route("/report", methods=["POST"])
 def report_issue():
-    data = request.json
+    data = request.get_json(force=True)
+
 
     issue = {
         "issueType": data.get("issueType"),
@@ -104,10 +105,9 @@ def get_issues():
 # UPDATE ISSUE STATUS (ADMIN)
 # -----------------------------
 
-
 @app.route("/update/<issue_id>", methods=["POST"])
 def update_status(issue_id):
-    data = request.json
+    data = request.get_json(force=True)
     new_status = data.get("status")
 
     print("UPDATE CALLED ->", issue_id, new_status)
@@ -120,6 +120,7 @@ def update_status(issue_id):
     })
 
     return jsonify({"message": "Status updated"})
+
 
 # -----------------------------
 # RUN SERVER
