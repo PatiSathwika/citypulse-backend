@@ -172,7 +172,7 @@ function updateStatus(issueId) {
 
     console.log("SENDING UPDATE:", issueId, status);
 
-    fetch(`/update/${id}`, {
+    fetch(`/update/${issueId}`, {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
